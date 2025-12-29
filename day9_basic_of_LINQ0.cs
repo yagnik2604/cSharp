@@ -10,9 +10,16 @@ namespace LinqBasics
       it does not hold data by itself
     */
     class Customer
-    {
-        public int Id { get; set; }
+    {   // public string name -> variable
+        public int Id { get; set; } //auto-implemented property 
         public string Name { get; set; }
+
+        /*
+            why properties -> because properties:
+                                             allow validation
+                                             allow control
+                                             work with framework(LINQ, EF, Serialization)
+        */
     }
     internal class Program
     {
