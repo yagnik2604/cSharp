@@ -85,13 +85,31 @@ class Car
     }
 }
 
+// base() in constructor
+class Parent
+{
+     public Parent(string name)
+    {
+         Console.WriteLine("Parent cnstructor called" +" "+ name);
+
+    }
+}
+class Child : Parent
+{    
+    //“Before running the Child constructor, call the Parent constructor and pass "Yagnik".”
+     public Child():base("yagnik")
+    {
+        Console.WriteLine("child constructor called");
+    }
+}
+
 class Program
 {
     static void Main(string[] args)
     {
 
-        Test t1 = new Test();
-        Test t2 = new Test();
+        // Test t1 = new Test();
+        // Test t2 = new Test();
         // Static constructor called!
         // Normal constructor called!
         // Normal constructor called!
@@ -99,12 +117,21 @@ class Program
 
 
 
-        Car c1 = new Car("BMW", 9000000);
-        Console.WriteLine(c1.Brand);
-        Console.WriteLine(c1.Price);
+        // Car c1 = new Car("BMW", 9000000);
+        // Console.WriteLine(c1.Brand);
+        // Console.WriteLine(c1.Price);
 
-        Car c2 = new Car(c1);  // copy constructor
+        // Car c2 = new Car(c1);  // copy constructor
+         
+         var Obj = new Child();
+
     }
 }
 
+/*
+    ---------------Constructor Execution Order-------------
+      When you create a child object:
+          1️⃣ Parent constructor
+          2️⃣ Child constructor     Always.
 
+*/
